@@ -1,0 +1,17 @@
+{
+  "name": "queue-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "queue-server.js",
+  "scripts": {
+    "start": "node queue-server.js",
+    "lint": "eslint **/*.js",
+    "test": "jest --verbose --coverage",
+    "test-watch": "jest --watchAll --verbose --coverage"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "socket.io": "^2.3.0"
+  }
+}
