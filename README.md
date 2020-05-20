@@ -12,7 +12,7 @@
 - this application have four independent JSON package. 
 - nodemon to restart the server.
 - Once it's restart enter localhost on the browser .
-- all roles have there on capabilities, by knowing the right route . you can access the right role and capabilities .
+
 
 #### Tests
 
