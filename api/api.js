@@ -8,7 +8,7 @@ const socket = io.connect('http://localhost:3001');
 const app = express();
 app.use(morgan('dev'));
 app.use(express.json());
-// app.use(express.urlencoded());
+app.use(express.urlencoded());
 app.use(cors());
 
 app.get('/', (req, res, next) => {
@@ -17,17 +17,16 @@ app.get('/', (req, res, next) => {
 });
 
 app.post('/delivery/:vendor/:order-id', (req, res, next) => {
-  let delivery = {
+  let order = {
     vendor: req.params.vendor,
     orderId: req.params.orderId,
   };
-  // my flower queued wait until it has been
-  socket.on('flowerOrder-queued', (payload) => {
-    res.status(200);
-    res.send('delivery-order successfully queued', payload);
-  });
+  // socket.on('flowerOrder-queued', (payload) => {
+  //   res.status(200);
+  //   res.send('delivery-order successfully queued', payload);
+  // });
 
-  socket.emit('delivery-order', delivery);
+  socket.emit('delivered', order);
 });
 
 app.listen(3000, () => {
